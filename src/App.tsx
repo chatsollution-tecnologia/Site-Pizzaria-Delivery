@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { 
   ArrowRight, 
   Instagram, 
-  Pizza,
   Phone,
   X,
   MessageCircle,
@@ -65,35 +64,25 @@ export default function App() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Header Section */}
-        <header className="pt-16 pb-10 flex flex-col items-center">
+        <header className="pt-16 pb-2 flex flex-col items-center">
           <motion.div 
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="relative mb-6"
+            className="relative"
           >
-            <div className="absolute inset-0 bg-orange-500 blur-2xl opacity-20 rounded-full animate-pulse" />
-            <div className="relative w-32 h-32 rounded-full border-4 border-white/90 p-2 bg-gradient-to-tr from-red-600 to-orange-500 shadow-[0_0_30px_rgba(239,68,68,0.4)] flex items-center justify-center">
-              <Pizza className="w-16 h-16 text-white drop-shadow-lg" />
+            <div className="relative w-64 h-64 flex items-center justify-center">
+              <img 
+                src="https://raw.githubusercontent.com/chatsollution-tecnologia/Site-Pizzaria-Delivery/929396ab6f756c63b07b69038ca0652a46a5f9a8/logo.png" 
+                alt="Logo Pizzaria Delivery" 
+                className="w-full h-full object-contain drop-shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
             </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl font-black tracking-tighter uppercase text-white drop-shadow-md">
-              Pizzaria
-            </h1>
-            <h2 className="text-2xl font-bold tracking-[0.3em] uppercase text-orange-400 -mt-1 drop-shadow-md">
-              Delivery
-            </h2>
           </motion.div>
         </header>
 
         {/* Main Content */}
-        <main className="max-w-xl mx-auto w-full px-6 py-8 flex flex-col items-center gap-10">
+        <main className="max-w-xl mx-auto w-full px-6 pt-2 pb-8 flex flex-col items-center gap-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
