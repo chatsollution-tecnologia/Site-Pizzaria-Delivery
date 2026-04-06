@@ -107,12 +107,24 @@ export default function App() {
                 rel="noopener noreferrer"
                 initial={{ x: index % 2 === 0 ? -30 : 30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 100 }}
-                whileHover={{ scale: 1.03, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className={`group relative w-full bg-gradient-to-r ${unit.color} rounded-2xl p-1 shadow-2xl transition-all duration-300`}
+                transition={{ delay: index * 0.05, type: "spring", stiffness: 100 }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative w-full rounded-2xl p-[2px] overflow-hidden shadow-2xl transition-all duration-300"
               >
-                <div className="bg-zinc-900/90 backdrop-blur-sm rounded-[14px] p-5 flex items-center justify-between">
+                {/* Rotating LED Border Effect */}
+                <div className="absolute inset-[-150%] animate-rotate-led opacity-100"
+                  style={{
+                    background: `conic-gradient(from 0deg, transparent 0%, ${index === 0 ? '#ff0000' : '#ff8c00'} 50%, #ffffff 100%)`
+                  }}
+                />
+                
+                {/* Solid Lit Border (Neon Base) - Thicker and Brighter */}
+                <div className={`absolute inset-0 border-[8px] ${index === 0 ? 'border-red-600 shadow-[0_0_30px_rgba(255,0,0,0.8)]' : 'border-orange-500 shadow-[0_0_30px_rgba(255,140,0,0.8)]'} rounded-2xl`} />
+                
+                <div className="absolute inset-0 bg-zinc-900/20 backdrop-blur-[1px] rounded-2xl" />
+                
+                <div className="relative bg-zinc-900/95 backdrop-blur-md rounded-[12px] p-5 flex items-center justify-between z-10 border border-white/20">
                   <div className="flex items-center gap-4">
                     <div className={`p-3 rounded-xl bg-gradient-to-br ${unit.color} shadow-lg`}>
                       {unit.icon}
