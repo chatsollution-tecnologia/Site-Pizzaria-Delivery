@@ -152,15 +152,15 @@ export default function App() {
                 href="https://www.instagram.com/pizzariadelivery.rj/"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, color: "#f97316" }}
-                className="text-white/70 transition-all p-3 bg-white/5 rounded-full hover:bg-white/10 backdrop-blur-md"
+                whileHover={{ scale: 1.2 }}
+                className="text-[#E1306C] transition-all p-3 bg-white/5 rounded-full hover:bg-white/10 backdrop-blur-md"
               >
                 <Instagram className="w-6 h-6" />
               </motion.a>
               <motion.button
                 onClick={() => setShowWhatsapp(true)}
-                whileHover={{ scale: 1.2, color: "#f97316" }}
-                className="text-white/70 transition-all p-3 bg-white/5 rounded-full hover:bg-white/10 backdrop-blur-md"
+                whileHover={{ scale: 1.2 }}
+                className="text-[#25D366] transition-all p-3 bg-white/5 rounded-full hover:bg-white/10 backdrop-blur-md"
               >
                 <Phone className="w-6 h-6" />
               </motion.button>
